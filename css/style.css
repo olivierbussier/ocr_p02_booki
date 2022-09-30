@@ -1,0 +1,586 @@
+
+* {
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+:root {
+    /* variables de couleurs imposées par l'exercice */
+    --blue: #0065FC;
+    --light-blue: #DEEBFF;
+    --grey: #F2F2F2;
+    --light-grey: #fdfdfd;
+    --grey-hover: #D2D2D2;
+    --grey-focus: #E2E2E2;
+    /* effet de courbure des bords */
+    --radius: 20px;
+
+    /* Filtres */
+    /* taille du cercle dans les filtres*/
+    --h-filter: 35px;
+
+    /* Epaisseur du border des filtres */
+    --border-filter:2px; 
+    --border-menu:3px;
+}
+
+/* reset de tous les liens */
+a {
+    text-decoration: none;
+    color: black;
+}
+
+body {
+    margin: 0;
+}
+
+/* wrapper global qui permet de centrer le contenu sur la page */
+.container {
+    max-width: 1400px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* ---------------------------
+   Header 
+   ---------------------------*/
+
+header {
+    display: flex;
+    flex-direction: column;
+}
+
+header h1 {
+    font-size: 20px;
+    margin-bottom: 0;
+    padding-top: 15px;
+}
+
+header p {
+    margin-top: 5px;
+    font-size: small;
+}
+
+/* ---------------------------
+   Menu
+   ---------------------------*/
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav img {
+    width: 150px;
+    margin-right: auto;
+    padding: 0 10px;
+}
+
+nav a {
+    border-top: var(--border-menu) var(--grey) solid;
+    padding: 15px;    
+    color: black;
+    text-align: center;
+}
+
+nav a[class="active"] {
+    border-top: var(--border-menu) var(--blue) solid;
+    color: #0065FC;
+    text-underline-offset: -40px;
+}
+
+nav a:hover {
+    border-top: var(--border-menu) var(--blue) solid;
+}
+
+/* ---------------------------
+   Recherche et filtres
+   ---------------------------*/
+.recherche {
+    display: flex;
+    margin-bottom: 20px;    
+}
+
+.recherche > i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+    border-radius: var(--radius) 0 0 var(--radius);
+    background-color: var(--grey);
+    border: var(--light-blue);
+}
+
+.recherche input {
+    border: 1px solid var(--grey);
+    background-color: white;
+    font-weight: 700;
+    font-size: 18px;
+    padding-left: 10px;
+    overflow: auto;
+}
+
+.recherche input:hover {
+    border: 1px solid var(--grey-hover);
+}
+
+.recherche button {
+    border: 0;
+    background-color: var(--blue);
+    color: white;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 10px;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.recherche button:hover {
+    cursor: pointer;
+}
+
+button .fa-solid {
+    display: none;
+}
+/* Zone de filtres */
+
+.filters {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filters h2 {
+    font-size: 15px;
+}
+
+.filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: calc(var(--h-filter) + var(--border-filter)) ;
+    border: var(--border-filter) var(--grey) solid;
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.filter i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--blue);
+    background-color: var(--light-blue);
+    padding: 15px;
+    border-radius: 50%; 
+    margin: -2px;
+    width: 48px;
+    height: 48px;
+}
+
+.filter span {
+    padding: 0 15px;
+}
+
+.filter:hover {
+    box-shadow: 3px 3px 5px 2px #f0f0f0;
+    transform: scale(1.05);
+    transition-duration: 0.5s;
+}
+
+/* ---------------------------
+   Zone d'affichage d'informations
+   ---------------------------*/
+.informational {
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.informational i {
+    display: flex;
+    justify-content:center;
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    color: var(--blue);
+    border: 2px solid var(--grey);
+    border-radius: 50%;  
+}
+
+/* ---------------------------
+   Zone d'affichage des résultats
+   de recherche et populaires
+   ---------------------------*/
+/* Wrapper pour les deux zones */
+.content {
+    display: flex; 
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* Zone de résultats hébergements */
+.hebergements {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--grey);
+    border-radius: var(--radius);
+    width: calc(70% - 10px);
+    margin: 0 0 20px 0;
+    order: 1;
+}
+
+.hebergements h2 {
+    padding: 20px 0 0 20px;
+    width: 100%;
+    font-size: medium;
+}
+
+.link {
+    font-weight: 700;
+    padding: 20px 20px;
+}
+
+/* ----------------------------------------------
+   Zone des hébergements les plus populaires
+*/
+.most-popular {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--grey);
+    border-radius: var(--radius);
+    width: calc(30% - 10px);
+    margin: 0 0 20px 0;
+    order: 2;
+}
+
+.most-popular h2 {
+    padding: 20px 0 0 20px;
+    width: 100%;
+    font-size: medium;
+}
+
+.most-popular a {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+/* ----------------------------------------------
+   Zone des activités
+*/
+.activites {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: var(--radius);
+    width: 100%;
+    padding-bottom: 20px;
+    margin: 0 0 20px 0;
+    order: 3;
+}
+
+.activites h2 {
+    padding: 20px 0 0 20px;
+    width: 100%;
+    font-size: medium;
+}
+
+
+/* Wrapper flex pour l'affichage des cards verticales */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+}
+
+/* Affichage d'une carte en mode vertical */
+.card-v {
+    background-color: white;
+    border-radius: var(--radius);
+    min-width: 175px;
+    margin: 10px;
+    width: 30%;
+}
+
+.card-v img {
+    width: 100%;
+    height: auto;
+    max-height: 120px;
+    padding: 4px;
+    border-radius: var(--radius) var(--radius) 0 0;
+    object-fit: cover;
+}
+
+.card-v h2 {
+    font-size:14px;
+    font-weight: 700;
+    padding: 0 10px;
+    margin: 0;
+}
+
+.card-v p {
+    padding: 0 10px;
+    margin-top: 2px;
+    margin-bottom: 4px;
+    font-size: 12px;
+}
+
+.cards-a{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    height: 400px;
+}
+
+
+/* Affichage d'une carte en mode vertical pour les activités */
+.card-a {
+    background-color: white;
+    width: calc(25% - 2 * 10px);
+    border-radius: var(--radius);
+    box-shadow: 10px 10px 10px 1px #f0f0f0;
+    margin: 10px 0;
+    height: calc(50% - 20px);
+}
+
+.card-a img {
+    width: 100%;
+    height: 80%;
+    border-radius: var(--radius) var(--radius) 0 0;
+    object-fit:cover
+}
+
+.card-a:nth-child(3n+1) {
+    height: 100%;
+}
+.card-a:nth-child(3n+1) img {
+    height: calc(100% - 35px);
+}
+
+.card-a h2 {
+    font-size:12px;
+    font-weight: 700;
+    padding: 5px 0 5px 10px;
+    margin: auto 0;
+    color: black;
+}
+
+/* Affichage d'une carte en mode horizontal */
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;    
+    width: 60%;
+}
+
+/* Wrapper flex pour l'affichage des cards horizontales  */
+
+.cards-h {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+}
+
+.card-h {
+    display: flex;
+    background-color: white;
+    border-radius: var(--radius);
+    margin: 10px;
+    font-size: 10px;
+    width: 100%;
+}
+
+/* image de la carte */
+.card-h img {
+    width: 40%;
+    height: 130px;
+    padding: 4px;
+    border-radius: var(--radius) 0 0 var(--radius);
+    object-fit:cover;
+}
+
+.card-h h2 {
+    font-size:14px;
+    font-weight: 700;
+    padding: 5px 10px;
+    margin: 0;
+}
+
+.card-h p {
+    padding: 0 10px;
+    margin-top: 2px;
+    margin-bottom: 4px;
+}
+
+.stars {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    color: var(--blue);
+    font-size: 10px;
+}
+.non {
+    color: var(--grey);
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: var(--grey)
+}
+
+footer div {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 992px) and (min-width: 768px)
+{
+    /* Tablette */
+    .container {
+        max-width: 992px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    .hebergements {
+        width: 100%;
+    }
+
+    .most-popular {
+        width: 100%;
+    }
+
+    .card-h {
+        background-color: white;
+        border-radius: var(--radius);
+        min-width: 175px;
+        width: calc(50% - 20px);
+        margin: 10px;
+        align-self: flex-start;
+    }
+
+    .card-h img {
+        width: 70%;
+        
+    }
+}
+
+@media screen and (max-width: 768px)
+{
+    /* Phone */
+    .container {
+        max-width: 768px;
+        min-width: 400px;
+        margin: auto;
+        padding: 0;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    nav {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    nav img {
+        margin: 0; /* Pour annuler margin auto afin de centrer */
+    }
+
+    nav a {
+        border-bottom: var(--border-menu) var(--grey) solid;
+        border-top: none;
+        width: 100%;
+    }
+
+    nav a[class="active"] {
+        border-bottom-color: var(--blue);
+        border-top: none;
+    }
+
+    nav a:hover {
+        border-bottom-color: var(--blue);
+        border-top: none;
+    }
+
+    .top, .filters {
+        padding: 15px;
+    }
+    .recherche button i {
+        display:initial;
+        padding: 0 10px;
+    }
+
+    .recherche button span {
+        display: none;
+    }
+
+    .most-popular {
+        width: 100%;
+        order:1;
+        border-radius: 0;
+    }
+
+    .hebergements {
+        width: 100%;
+        order: 2;
+        border-radius: 0;
+        background-color: #fff;
+    }
+
+    .cards-a {
+        flex-direction: row;
+        height: auto;
+        justify-content: initial;
+        align-content: initial;
+    }
+
+    .card-a {
+        flex-basis: 100%;
+        height: auto;
+        margin: 10px;
+    }
+
+    .card-a:nth-child(3n+1) {
+        flex-basis: 100%;
+        height: auto;
+    }
+
+    .card-a img {
+        width: 100%;
+        max-height: 150px;
+    }
+
+    .card-a:nth-child(3n+1) img {
+        
+        width: 100%;
+        max-height: 150px;
+    }
+
+    .card-v {
+        background-color: white;
+        width: 100%;
+        box-shadow: 0px 0px 29px 12px var(--grey);
+    }
+
+    .card-v img {
+        max-height: 150px;
+    }
+
+    footer {
+        flex-direction: column;
+        padding-left: 20px;
+    }
+
+}
