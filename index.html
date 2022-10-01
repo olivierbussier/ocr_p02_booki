@@ -5,14 +5,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 
-    <title>Zozo le clown</title>
+    <title>P2 - Booki</title>
 </head>
 
+<!--
+    Fichier Openclassrooms pour le projet P2 - BOOKI
+    - Doit passer le W3C pour le html et le css
+    - doit utiliser les flexbox
+    - Recherche non fonctionelle
+    - Les cartes doivent pouvoir etre clicquées dans leur intégralité
+    - Filtres doivent changer d'apparence au survol
+    - Les liens "hebergements" et "activités" du menu doivent mener vers les rubriques correspondantes
+    - Travailler le responsive desktop first et mobile.
+    - le site doit avoir un rendu correct sur tablette mais choix d'impélentation libres.
+    - Breakpoints 768px et 992px
+    - Utilisation de Font Awesome et Raleway google font en CDN
+    - Couleurs de la charte imposés (deux bleus et un gris)
+    - Pixels plutot que rem 
+    - Flexbox plutot que grid
+    - Pas de framework CSS
+    - Utiliser des balises sémantiques
+    - Tests sur Chrome et Firefox
+-->
 <body>
     <!-- Container englobant l'ensemble du site hors footer -->
 
@@ -27,6 +45,8 @@
                 </div>
             </nav>
         </header>
+
+        <!-- Section titres -->
 
         <section class="top">
     
@@ -46,6 +66,8 @@
 
         </section>
         
+        <!-- Section filtres -->
+
         <section class="filters">
             <h2>Filtres</h2>
             <div>
@@ -56,12 +78,18 @@
             </div>
         </section>
 
+        <!-- Section messages d'information -->
+
         <div class="informational">
             <i class="fa-solid fa-info"></i>Plus de 500 logements disponibles dans cette ville
         </div>
 
+        <!-- Section wrapper pour le contenu du site -->
+
         <main class="content">
     
+            <!-- Section liste des hébergements -->
+
             <div id="hebergements" class="hebergements">
 
                 <a href="#"><h2>Hébergements à Marseille</h2></a>
@@ -164,6 +192,8 @@
 
             </div>
 
+            <!-- Section affichage des hébergements les plus populaires -->
+
             <div class="most-popular">
 
                 <a href="#"><h2>Les plus populaires</h2><i class="fa-solid fa-star link"></i></a>
@@ -173,7 +203,7 @@
                     <article class="card-h">
                         <a href="">
                             <img src="images/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg" alt="Hôtel le soleil du matin">
-                            <div class="card-content">
+                            <div class="card-h-content">
                                 <div>
                                     <h2>Hôtel le soleil du matin</h2>
                                     <p>Nuit à partir de <strong>96€</strong></p>
@@ -192,7 +222,7 @@
                     <article class="card-h">
                         <a href="">
                             <img src="images/aw-creative-VGs8z60yT2c-unsplash.jpg" alt="Au coeur de l'eau">
-                            <div class="card-content">
+                            <div class="card-h-content">
                                 <div>
                                     <h2>Au coeur de l'eau<br>Chambres d'hôtes</h2>
                                     <p>Nuit à partir de <strong>96€</strong></p>
@@ -211,7 +241,7 @@
                     <article class="card-h">
                         <a href="">
                             <img src="images/febrian-zakaria-sjvU0THccQA-unsplash.jpg" alt="Hôtel tout bleu et blanc">
-                            <div class="card-content">
+                            <div class="card-h-content">
                                 <div>
                                     <h2>Hôtel tout bleu et blanc</h2>
                                     <p>Nuit à partir de <strong>96€</strong></p>
@@ -230,6 +260,8 @@
                 </div>
             </div>
             
+            <!-- Section d'affichage des activités -->
+
             <div class="activites">
 
                 <a href="#"><h2 id="activites">Activités à Marseille</h2></a>
@@ -282,6 +314,7 @@
             </div>
         </main>
 
+        <!-- Section pied de page -->
 
         <footer>
        
