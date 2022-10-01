@@ -169,7 +169,6 @@ button .fa-solid {
     border: var(--border-filter) var(--grey) solid;
     font-weight: 700;
     font-size: 17px;
-    flex-basis: 0 20px;
 }
 
 .filter i {
