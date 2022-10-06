@@ -488,7 +488,7 @@ footer div {
     /* Phone */
     .container {
         max-width: 768px;
-        min-width: 380px;
+        min-width: 360px;
         margin: auto;
         padding: 0;
     }
